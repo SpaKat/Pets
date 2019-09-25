@@ -1,0 +1,2 @@
+Decay Hunger = .0001
+Decay Happiness = .0001
