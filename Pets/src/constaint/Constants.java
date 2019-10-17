@@ -1,3 +1,4 @@
+package constaint;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -32,25 +33,25 @@ public class Constants {
 	private void parse(String line) {
 		String[] command = line.split("=");
 		switch(command[0].trim()) {
-			case "Decay Hunger":
-				try {
-					decayHunger = Double.parseDouble(command[1].trim());
-				}catch (Exception e) {
-					e.printStackTrace();
-					System.err.println("Decay Hunger failed");
-				}
-				break;
-			case "Decay Happiness":
-				try {
-					decayHappiness = Double.parseDouble(command[1].trim());
-				}catch (Exception e) {
-					e.printStackTrace();
-					System.err.println("Decay Happiness failed");
-				}
-				break;
-			default:
-				System.out.println("Failed Command: " + command[0]);
-				break;
+		case "Decay Hunger":
+			try {
+				decayHunger = Double.parseDouble(command[1].trim());
+			}catch (Exception e) {
+				e.printStackTrace();
+				System.err.println("Decay Hunger failed");
+			}
+			break;
+		case "Decay Happiness":
+			try {
+				decayHappiness = Double.parseDouble(command[1].trim());
+			}catch (Exception e) {
+				e.printStackTrace();
+				System.err.println("Decay Happiness failed");
+			}
+			break;
+		default:
+			System.out.println("Failed Command: " + command[0]);
+			break;
 		}
 	}
 	public double getDecayHunger() {
@@ -61,11 +62,15 @@ public class Constants {
 	}
 	public static void main(String[] args)   {
 		try {
-		Constants c = new Constants();
-		System.out.println(c.getDecayHunger());
+			Constants c = new Constants();
+			System.out.println(c.getDecayHunger());
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
+	}
+	public double getDecayThrist() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
