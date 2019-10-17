@@ -35,5 +35,11 @@ public class Pet {
 		hunger.eat(food.getValue());	
 	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return hunger.toString();
+	}
+	
 
 }
