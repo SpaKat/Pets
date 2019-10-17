@@ -19,7 +19,7 @@ public class DecayLevel {
 	}
 
 	public void update() {
-		double min = getCurrent()*getDecayRate();
+		double min = getMax()*getDecayRate();
 		if (min<getDecayRate()) {
 			min = getDecayRate();
 		}
