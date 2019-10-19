@@ -9,7 +9,9 @@ import java.io.IOException;
 public class Constants {
 
 	private double decayHunger; 
-	private double decayHappiness; 
+	private double decayHappiness;
+	private double decayThirst;
+	private double decaySleep; 
 	public Constants() throws IOException {
 		File file = new File("Constants.txt");
 		if(file.createNewFile()) {
@@ -18,6 +20,8 @@ public class Constants {
 
 			bw.write("Decay Hunger = .0001\n");
 			bw.write("Decay Happiness = .0001\n");
+			bw.write("Decay Thirst = .0001\n");
+			bw.write("Decay Sleep = .0001\n");
 			bw.close();
 		}
 		FileReader fr = new FileReader(file);
@@ -49,6 +53,22 @@ public class Constants {
 				System.err.println("Decay Happiness failed");
 			}
 			break;
+		case "Decay Thirst":
+			try {
+				decayThirst = Double.parseDouble(command[1].trim());
+			}catch (Exception e) {
+				e.printStackTrace();
+				System.err.println("Decay Thirst failed");
+			}
+			break;
+		case "Decay Sleep":
+			try {
+				decaySleep = Double.parseDouble(command[1].trim());
+			}catch (Exception e) {
+				e.printStackTrace();
+				System.err.println("Decay Sleep failed");
+			}
+			break;
 		default:
 			System.out.println("Failed Command: " + command[0]);
 			break;
@@ -59,6 +79,12 @@ public class Constants {
 	}
 	public double getDecayHappiness() {
 		return decayHappiness;
+	}
+	public double getDecayThirst() {
+		return decayThirst;
+	}
+	public double getDecaySleep() {
+		return decaySleep;
 	}
 	public static void main(String[] args)   {
 		try {
