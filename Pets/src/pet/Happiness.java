@@ -15,6 +15,8 @@ public class Happiness extends DecayLevel{
 			setDecayRate(1);
 		}
 	}
-
+	public void fun(double fun){
+		setCurrent(getCurrent() + Math.min(Math.abs( getMax() - getCurrent()),fun));
+	}
 }
 

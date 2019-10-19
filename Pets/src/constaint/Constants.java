@@ -95,8 +95,4 @@ public class Constants {
 		}
 
 	}
-	public double getDecayThrist() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
