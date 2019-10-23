@@ -4,7 +4,6 @@ import java.io.IOException;
 import constaint.Constants;
 
 public class Hunger extends DecayLevel{
-
 	
 	public Hunger(double maxLevel) {
 		super(maxLevel);

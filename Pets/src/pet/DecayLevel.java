@@ -19,11 +19,11 @@ public class DecayLevel {
 	}
 
 	public void update() {
-		double min = getMax()*getDecayRate();
-		if (min<getDecayRate()) {
-			min = getDecayRate();
-		}
-		setCurrent(getCurrent() - (min));
+		//double min = getMax()*getDecayRate();
+		//if (min<getDecayRate()) {
+		//	min = getDecayRate();
+		//}
+		setCurrent(getCurrent() - (getDecayRate()));
 	}
 	
 	@Override
@@ -39,7 +39,7 @@ public class DecayLevel {
 
 
 	public void setDecayRate(double decayRate) {
-		this.decayRate = decayRate;
+		this.decayRate = decayRate*getMax();
 	}
 
 

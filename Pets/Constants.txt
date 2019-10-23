@@ -1,2 +1,4 @@
 Decay Hunger = .0001
 Decay Happiness = .0001
+Decay Thirst = .0001
+Decay Sleep = .0001

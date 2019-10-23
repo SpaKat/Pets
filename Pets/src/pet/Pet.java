@@ -1,6 +1,6 @@
 package pet;
 
-import world.Food;
+import world.Consumable;
 
 public class Pet {
 	
@@ -31,14 +31,18 @@ public class Pet {
 		}
 		return ans;
 	}
-	public void eat(Food food) {
-		hunger.eat(food.getValue());	
+	
+	public void consume(Consumable food){
+		hunger.eat(food.getRot() ? -food.getFood() : food.getFood());
+		thirst.drink(food.getWater());
+		happiness.fun(food.getJoy());
+		sleep.rest(food.getEnergy());
 	}
 	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return hunger.toString();
+		return String.format("%.1f | %.1f | %.1f | %.1f", hunger.getCurrent(), thirst.getCurrent(), happiness.getCurrent(), sleep.getCurrent());
 	}
 	
 

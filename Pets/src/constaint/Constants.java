@@ -12,7 +12,6 @@ public class Constants {
 	private double decayHappiness;
 	private double decayThirst;
 	private double decaySleep; 
-	
 	public Constants() throws IOException {
 		File file = new File("Constants.txt");
 		if(file.createNewFile()) {
