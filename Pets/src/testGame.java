@@ -28,7 +28,7 @@ public class testGame {
 		game.begin();
 
 		try {
-			Thread.sleep(92000);
+			Thread.sleep(22000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
