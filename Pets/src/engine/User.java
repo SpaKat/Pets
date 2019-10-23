@@ -1,14 +1,15 @@
+package engine;
+import java.util.ArrayList;
+
 import pet.Pet;
 
 public class User {
 
-	private Pets pets;
-	//private boolean connected; 
+	private ArrayList<Pet> pets;
 	
 	public User() {
-		pets = new Pets();		
+		pets = new ArrayList<>();		
 	}
-	
 	
 	public void addPetToGame(Pet p) {
 		pets.add(p);
@@ -16,7 +17,7 @@ public class User {
 	public void removePetFromGame(Pet p) {
 		pets.remove(p);
 	}
-	
-
-	
+	public ArrayList<Pet> getPets() {
+		return pets;
+	}
 }
