@@ -7,13 +7,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Constants {
-
+	public static String FILELOCATION = "src/main/resources/"; 
 	private double decayHunger; 
 	private double decayHappiness;
 	private double decayThirst;
 	private double decaySleep; 
 	public Constants() throws IOException {
-		File file = new File("Constants.txt");
+		File file = new File(FILELOCATION + "Constants.txt");
 		if(file.createNewFile()) {
 			FileWriter fw = new FileWriter(file);
 			BufferedWriter bw = new BufferedWriter(fw);
