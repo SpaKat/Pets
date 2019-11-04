@@ -5,34 +5,33 @@ public class test {
 
 
 	public static void main(String[] args) {
-		Pet 	p 		= new Pet(100, 100, 100, 100);
-		Consumable 	a 	= new Consumable(2);
-		Consumable 	b 	= new Consumable(2,4);
-		Consumable 	c 	= new Consumable(2,4,6);
-		Consumable 	d 	= new Consumable(2,4,6,8);
-		Consumable 	e 	= new Consumable(2,4,6,8,10);
-		Consumable  f	= new Consumable(2,4,6,8,10,true);
+		Pet 	p 		= new Pet("PET", 1000, 1000, 1000, 1000);
+		Consumable 	a 	= new Consumable("Apple", 500);
+		Consumable 	b 	= new Consumable("Banana", 500,200);
+		Consumable 	c 	= new Consumable("Carrot", 500,200,500);
+		Consumable 	d 	= new Consumable("Dragon Fruit", 500,200,500,200);
+		Consumable 	e 	= new Consumable("Eggplant", 500,200,500,200,100);
+		Consumable  f	= new Consumable("Fruit", 500,200,500,200,100,true);
 		int 	i 		= 0;
-		System.out.println("Hung | Thir | Happ | Sleep");
 		while(!p.died()) {
 			i++;
 			p.update();
 			
 			switch(i){
-			case 500:p.consume(a);
+			case 500:p.consume(a); p.hungerLU(1500);
 			break;
-			case 1000:p.consume(b);
+			case 1000:p.consume(b); p.thirstLU(1500);
 			break;
-			case 1500:p.consume(c);
+			case 1500:p.consume(c); p.happinessLU(1500);
 			break;
-			case 2000:p.consume(d);
+			case 2000:p.consume(d); p.sleepLU(1500);
 			break;
-			case 2500:p.consume(e);
+			case 2500:p.consume(e); p.hungerLU(1500);
 			break;
-			case 3000:p.consume(f);
+			case 3000:p.consume(f); p.thirstLU(1500);
 			break;
 			}
-			System.out.println(p);
+			//System.out.println(p);
 
 			
 			try {

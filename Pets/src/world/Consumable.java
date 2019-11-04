@@ -8,39 +8,46 @@ public class Consumable {
 	private double life 	= 0;
 	private double water 	= 0;
 	private double food 	= 0;
+	private String name		= "";
 
-	public Consumable(double hunger, double thirst, double health, double happiness, double rest, boolean rotten) {
+	public Consumable(String title, double hunger, double thirst, double health, double happiness, double rest, boolean rotten) {
 		this.rot 	= rotten;
 		this.energy = rest;
 		this.joy 	= happiness;
 		this.life 	= health;
 		this.water 	= thirst;
 		this.food 	= hunger;
+		this.name	= title;
 	}
-	public Consumable(double hunger, double thirst, double health, double happiness, double rest) {
+	public Consumable(String title, double hunger, double thirst, double health, double happiness, double rest) {
 		this.energy = rest;
 		this.joy 	= happiness;
 		this.life 	= health;
 		this.water 	= thirst;
 		this.food 	= hunger;
+		this.name	= title;
 	}
-	public Consumable(double hunger, double thirst, double health, double happiness) {
+	public Consumable(String title, double hunger, double thirst, double health, double happiness) {
 		this.joy 	= happiness;
 		this.life 	= health;
 		this.water 	= thirst;
 		this.food 	= hunger;
+		this.name	= title;
 	}
-	public Consumable(double hunger, double thirst, double health) {
+	public Consumable(String title, double hunger, double thirst, double health) {
 		this.life 	= health;
 		this.water 	= thirst;
 		this.food 	= hunger;
+		this.name	= title;
 	}
-	public Consumable(double hunger, double thirst) {
+	public Consumable(String title, double hunger, double thirst) {
 		this.water 	= thirst;
 		this.food 	= hunger;
+		this.name	= title;
 	}
-	public Consumable(double hunger) {
+	public Consumable(String title, double hunger) {
 		this.food 	= hunger;
+		this.name	= title;
 	}
 	
 	public boolean getRot() {
@@ -78,6 +85,12 @@ public class Consumable {
 	}
 	public void setFood(double food) {
 		this.food = food;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
