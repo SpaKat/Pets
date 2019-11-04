@@ -26,7 +26,7 @@ public class testGame {
 		game.addUser(user2);
 		
 		game.begin();
-
+		
 		try {
 			Thread.sleep(22000);
 		} catch (InterruptedException e) {
