@@ -5,7 +5,11 @@ import constaint.Constants;
 
 public class Thirst extends DecayLevel{
 
-	public Thirst(double maxlevel) {
+	public Thirst(double maxlevel, double decay) {
+		super(maxlevel, decay);
+	}
+
+	/*public Thirst(double maxlevel) {
 		super(maxlevel);
 		try {
 			Constants c = new Constants();
@@ -14,7 +18,8 @@ public class Thirst extends DecayLevel{
 			e.printStackTrace();
 			setDecayRate(1);
 		}
-	}
+	}*/
+	
 	public void drink(double drink){
 		setCurrent(getCurrent() + Math.min(Math.abs( getMax() - getCurrent()),drink));
 	}

@@ -11,39 +11,24 @@ public class Consumable {
 	private String name		= "";
 
 	public Consumable(String title, double hunger, double thirst, double health, double happiness, double rest, boolean rotten) {
+		this(title,hunger,thirst,health,happiness,rest);
 		this.rot 	= rotten;
-		this.energy = rest;
-		this.joy 	= happiness;
-		this.life 	= health;
-		this.water 	= thirst;
-		this.food 	= hunger;
-		this.name	= title;
 	}
 	public Consumable(String title, double hunger, double thirst, double health, double happiness, double rest) {
+		this(title,hunger,thirst,health,happiness);
 		this.energy = rest;
-		this.joy 	= happiness;
-		this.life 	= health;
-		this.water 	= thirst;
-		this.food 	= hunger;
-		this.name	= title;
 	}
 	public Consumable(String title, double hunger, double thirst, double health, double happiness) {
+		this(title,hunger,thirst,health);
 		this.joy 	= happiness;
-		this.life 	= health;
-		this.water 	= thirst;
-		this.food 	= hunger;
-		this.name	= title;
 	}
 	public Consumable(String title, double hunger, double thirst, double health) {
+		this(title,hunger,thirst);
 		this.life 	= health;
-		this.water 	= thirst;
-		this.food 	= hunger;
-		this.name	= title;
 	}
 	public Consumable(String title, double hunger, double thirst) {
+		this(title,hunger);
 		this.water 	= thirst;
-		this.food 	= hunger;
-		this.name	= title;
 	}
 	public Consumable(String title, double hunger) {
 		this.food 	= hunger;

@@ -1,5 +1,7 @@
 package pet;
 
+import java.util.HashMap;
+
 import world.Consumable;
 
 public class Pet {
@@ -11,12 +13,12 @@ public class Pet {
 	private Sleep sleep;
 	private BattleStats battlestats;
 		
-	public Pet(String petName, double maxHunger, double maxthirst, double maxHappiness, double maxSleep) {
+	public Pet(String petName, HashMap<String,Double> c, double maxHunger, double maxthirst, double maxHappiness, double maxSleep) {
 		name = petName;
-		hunger = new Hunger(maxHunger);
-		thirst = new Thirst(maxthirst);
-		happiness = new Happiness(maxHappiness);
-		sleep = new Sleep(maxSleep);
+		hunger = new Hunger(maxHunger,c.get("Decay Hunger"));
+		thirst = new Thirst(maxthirst,c.get("Decay Thirst"));
+		happiness = new Happiness(maxHappiness,c.get("Decay Happiness"));
+		sleep = new Sleep(maxSleep,c.get("Decay Sleep"));
 	}
 	
 	public void update() {

@@ -2,3 +2,6 @@ Decay Hunger = .0001
 Decay Happiness = .0001
 Decay Thirst = .0001
 Decay Sleep = .0001
+Width = 1280
+Height = 720
+Max Pets Per User = 10

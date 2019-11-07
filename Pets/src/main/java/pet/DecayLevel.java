@@ -4,8 +4,9 @@ public class DecayLevel {
 	private double current;
 	private double decayRate;
 	
-	public DecayLevel(double maxlevel) {
+	public DecayLevel(double maxlevel, double decay) {
 		setMax(maxlevel);
+		setDecayRate(decay);
 		setCurrent(getMax());
 	}
 

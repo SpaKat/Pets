@@ -5,15 +5,15 @@ import constaint.Constants;
 
 public class Hunger extends DecayLevel{
 	
-	public Hunger(double maxLevel) {
-		super(maxLevel);
-		try {
+	public Hunger(double maxLevel,double decay) {
+		super(maxLevel,decay);
+		/*try {
 			Constants c = new Constants();
 			setDecayRate(c.getDecayHunger());
 		} catch (IOException e) {
 			e.printStackTrace();
 			setDecayRate(1);
-		}
+		}*/
 	}
 
 	public void eat(double food) {

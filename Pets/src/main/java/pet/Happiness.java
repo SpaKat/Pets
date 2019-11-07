@@ -5,7 +5,11 @@ import constaint.Constants;
 
 public class Happiness extends DecayLevel{
 
-	public Happiness(double maxlevel) {
+	public Happiness(double maxlevel, double decay) {
+		super(maxlevel, decay);
+	}
+
+	/*public Happiness(double maxlevel) {
 		super(maxlevel);
 		try {
 			Constants c = new Constants();
@@ -14,7 +18,7 @@ public class Happiness extends DecayLevel{
 			e.printStackTrace();
 			setDecayRate(1);
 		}
-	}
+	}*/
 	public void fun(double fun){
 		setCurrent(getCurrent() + Math.min(Math.abs( getMax() - getCurrent()),fun));
 	}
