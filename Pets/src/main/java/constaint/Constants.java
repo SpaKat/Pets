@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class Constants {
 	public static String FILELOCATION = "src/main/resources/"; 
-	private static HashMap<String,Double> CONSTANTS;
+	private HashMap<String,Double> CONSTANTS;
 	private double decayHunger; 
 	private double decayHappiness;
 	private double decayThirst;
@@ -132,7 +132,7 @@ public class Constants {
 		return maxPetsPerUser;
 	}
 	*/
-	public static HashMap<String, Double> getCONSTANTS() {
+	public HashMap<String, Double> getCONSTANTS() {
 		return CONSTANTS;
 	}
 	

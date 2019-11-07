@@ -1,3 +1,7 @@
+
+import java.io.IOException;
+
+import constaint.Constants;
 import pet.Pet;
 import world.Consumable;
 
@@ -5,7 +9,14 @@ public class test {
 
 
 	public static void main(String[] args) {
-		Pet 	p 		= new Pet("PET", 1000, 1000, 1000, 1000);
+		Constants constants = null;
+		try {
+			constants = new Constants();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		Pet 	p 		= new Pet("PET", constants.getCONSTANTS(), 1000, 1000, 1000, 1000);
 		Consumable 	a 	= new Consumable("Apple", 500);
 		Consumable 	b 	= new Consumable("Banana", 500,200);
 		Consumable 	c 	= new Consumable("Carrot", 500,200,500);
