@@ -25,8 +25,11 @@ public class Game {
 	public void addUser(User u) {
 		users.add(u);
 	}
-	public void removePetFromGame(User u) {
+	public void removeUserFromGame(User u) {
 		users.remove(u);
+	}
+	public ArrayList<User> getUsers() {
+		return users;
 	}
 	
 
