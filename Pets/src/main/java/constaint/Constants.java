@@ -34,7 +34,7 @@ public class Constants {
 		}
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
-
+		CONSTANTS = new HashMap<String,Double>();
 		String line;
 		while ( !((line = br.readLine())==null) ) {
 			//parse(line);
