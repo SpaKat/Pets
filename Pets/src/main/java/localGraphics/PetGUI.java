@@ -39,51 +39,56 @@ public class PetGUI extends Application {
 	public PetGUI() {
 		root = new Pane();
 		scene1 = new Scene(root);
-		petPrint = new Label("");
-		feed = new Button("FEED");
 		try {
 			consts = new Constants();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 		c = new HashMap<String,Double>();
 		c = consts.getCONSTANTS();
 		
+		//Label Properties
+		petPrint = new Label("");
 		petPrint.setTranslateX(10);
 		petPrint.setTranslateY(30);
 		
+		//button Properties
+		feed = new Button("FEED");
 		feed.setTranslateX(600);
 		feed.setTranslateY(30);
 		
+		//game info
 		game 	= new Game(50);
 		user1 	= new User();
 		user1.addPetToGame(new Pet("Alfred", c, 500, 500, 500, 500));
 		game.addUser(user1);
 		game.begin();
+		
+		//making sprites to represent pets
 		sprites = new PetSprites(game.getUsers(), c.get(MAXPPU).intValue());
 		spr = sprites.getSprites();
+		
+		//button events
+		feed.setOnMouseReleased(e -> {
+			Pet temp = game.getPet(0,0);
+			temp.consume(new Consumable("Apple", 2, 2, 2, 2, 2, false));
+			temp.hungerLU(200);
+			petPrint.setText(temp.toString());
+		});
+		
+		//add objects to the pane
 		int i = 0;
 		int j = 0;
 		for(Circle[] a:spr) {
 			for(Circle b:a) {
 				if(b!=null) {
 					root.getChildren().add(b);
-					///UPDATE TO GET SPECIFIC USER FROM GAME AND USER
-					petPrint.setText(game.getUsers().get(i).getPets().get(j).toString());
+					petPrint.setText(game.getPet(i,j).toString());
 				}
 				j++;
 			}
 			i++;
 		}
-		
-		feed.setOnMouseReleased(e -> {
-			Pet temp = game.getUsers().get(0).getPets().get(0);
-			temp.consume(new Consumable("Apple", 2, 2, 2, 2, 2, false));
-			temp.hungerLU(200);
-			petPrint.setText(temp.toString());
-		});
-		
 		root.getChildren().add(petPrint);
 		root.getChildren().add(feed);
 		
@@ -92,6 +97,7 @@ public class PetGUI extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		
+		//setting preferences for the scene
 		root.setPrefSize(c.get(WIDTH), c.get(HEIGHT));
 		primaryStage.setScene(scene1);
 		primaryStage.setTitle("LabPets");

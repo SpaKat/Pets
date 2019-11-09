@@ -2,6 +2,8 @@ package engine;
 
 import java.util.ArrayList;
 
+import pet.Pet;
+
 public class Game {
 	
 	private ArrayList<User> users;
@@ -31,6 +33,11 @@ public class Game {
 	public ArrayList<User> getUsers() {
 		return users;
 	}
-	
+	public User getUser(int index) {
+		return users.get(index);
+	}
+	public Pet getPet(int userID, int petID) {
+		return users.get(userID).getPet(petID);
+	}
 
 }

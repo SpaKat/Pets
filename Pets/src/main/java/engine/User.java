@@ -20,4 +20,7 @@ public class User {
 	public ArrayList<Pet> getPets() {
 		return pets;
 	}
+	public Pet getPet(int index) {
+		return pets.get(index);
+	}
 }
