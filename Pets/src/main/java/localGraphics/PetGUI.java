@@ -7,6 +7,7 @@ import constaint.Constants;
 import engine.Game;
 import engine.User;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -55,10 +56,11 @@ public class PetGUI extends Application {
 		feed.setTranslateX(600);
 		feed.setTranslateY(30);
 		
-		game 	= new Game();
+		game 	= new Game(50);
 		user1 	= new User();
 		user1.addPetToGame(new Pet("Alfred", c, 500, 500, 500, 500));
 		game.addUser(user1);
+		game.begin();
 		sprites = new PetSprites(game.getUsers(), c.get(MAXPPU).intValue());
 		spr = sprites.getSprites();
 		int i = 0;
@@ -93,6 +95,10 @@ public class PetGUI extends Application {
 		root.setPrefSize(c.get(WIDTH), c.get(HEIGHT));
 		primaryStage.setScene(scene1);
 		primaryStage.setTitle("LabPets");
+		primaryStage.setOnCloseRequest(e -> {
+			Platform.exit();
+			game.end();
+		});
 		primaryStage.show();
 	}
 
